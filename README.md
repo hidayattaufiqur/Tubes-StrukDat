@@ -1,2 +1,2 @@
 ### Tubes StrukDat 
-This repository contains final task for data structure subject. 
+This repository contains final project for data structure subject. 
