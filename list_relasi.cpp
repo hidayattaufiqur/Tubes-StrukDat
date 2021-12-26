@@ -101,8 +101,8 @@ void addRelation(listRelasi &Lr, listEmail Le, listTag Lt) {
     int ID;
     string tag;
 
-    showEmail(Le);
-    showTag(Lt);
+//    showEmail(Le);
+//    showTag(Lt);
     cout << "Buat relasi untuk email ID: ";
     cin >> ID;
 
@@ -165,6 +165,24 @@ void showAllRelation(listRelasi Lr) {
 
         cout << "------------------------------" << endl;
 
+        R = next(R);
+    }
+}
+
+void showRelationOfEmail(listRelasi Lr, listEmail Le, int emailID) {
+    adrRelasi R = first(Lr);
+    adrEmail E = findEmail(Le, emailID);
+    while (R != NULL) {
+        if (email(R) == E) {
+            cout << "ID: " << info(email(R)).emailID << endl;
+            cout << "Pengirim Email : " << info(email(R)).emailID << endl;
+            cout << "Penerima Email : " << info(email(R)).penerima << endl;
+            cout << "Subjek Email   : " << info(email(R)).subjek << endl;
+            cout << "Isi Email      : " << endl << "-> " << info(email(R)).isi << endl;
+            cout << "Tag Email      : " << info(tag(R)) << endl;
+
+            cout << "------------------------------" << endl;
+        }
         R = next(R);
     }
 }

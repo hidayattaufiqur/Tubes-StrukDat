@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1640498239 source:c:\c++\strukdat\tubes\tubes std\main.cpp
+1640521663 source:c:\c++\strukdat\tubes\tubes std\main.cpp
 	"list_email.h"
 	"list_tags.h"
 	"list_relasi.h"
 
-1640497963 source:c:\c++\strukdat\tubes\tubes std\list_relasi.cpp
+1640521739 source:c:\c++\strukdat\tubes\tubes std\list_relasi.cpp
 	"list_relasi.h"
 
 1640498092 source:c:\c++\strukdat\tubes\tubes std\list_tags.cpp
@@ -19,7 +19,7 @@
 1640462692 c:\c++\strukdat\tubes\tubes std\list_tags.h
 	<iostream>
 
-1640497978 c:\c++\strukdat\tubes\tubes std\list_relasi.h
+1640521512 c:\c++\strukdat\tubes\tubes std\list_relasi.h
 	<iostream>
 	"list_email.h"
 	"list_tags.h"

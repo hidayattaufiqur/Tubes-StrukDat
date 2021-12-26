@@ -37,6 +37,7 @@ void deleteRelation(listRelasi &Lr, listEmail Le, listTag Lt, adrRelasi &P);
 void showEmailsOfTag(listRelasi Lr); // 11a. show emails by tag X
 void countEmailsOfSender(listRelasi Lr); // 11b. count emails from sender X with tag X
 void showAllRelation(listRelasi Lr);
+void showRelationOfEmail(listRelasi Lr, listEmail Le, int emailID);
 
 
 #endif // LIST_RELASI_H_INCLUDED

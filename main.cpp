@@ -11,12 +11,8 @@ int main()
     inputAndAllocate(P);
     insertLast(Le, P);
 
-
     inputAndAllocate(P);
     insertLast(Le, P);
-
-//    deleteEmailByID(L, 2, P);
-
 
     listTag Lt;
     createList(Lt);
@@ -38,7 +34,9 @@ int main()
     addRelation(Lr, Le, Lt);
 
     showAllRelation(Lr);
+    showRelationOfEmail(Lr, Le, 1);
     deleteRelation(Lr, Le, Lt, R);
+    showRelationOfEmail(Lr, Le, 1);
     showAllRelation(Lr);
 
     cout << "Hello world!" << endl;
