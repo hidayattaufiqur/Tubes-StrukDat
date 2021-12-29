@@ -30,14 +30,17 @@ void deleteFirst(listRelasi &L, adrRelasi &P);
 void deleteLast(listRelasi &L, adrRelasi &P);
 void insertTagOfEmail(listRelasi &Lr, adrEmail email, adrTag tag); // 5. insert child of parent X
 void deleteTagOfEmail(listRelasi &Lr, adrEmail email, adrTag tag, adrRelasi &P); // 6. delete child of parent X
-void showTagOfEmail(listRelasi &Lr, adrRelasi P); // 7. show child of parent X
-void findTagOfEmail();
-void addRelation(listRelasi &Lr, listEmail Le, listTag Lt);
-void deleteRelation(listRelasi &Lr, listEmail Le, listTag Lt, adrRelasi &P);
-void showEmailsOfTag(listRelasi Lr); // 11a. show emails by tag X
-void countEmailsOfSender(listRelasi Lr); // 11b. count emails from sender X with tag X
+void showTagOfEmail(listRelasi Lr, listEmail Le, int emailID); // 7. show child of parent X
+/**
+sudah tercover sama procedure showTagOfEmail
+// adrTag findTagOfEmail(listRelasi Lr, listEmail Le, listTag Lt, int emailID); // 8. find child of parent X
+*/
+void addRelation(listRelasi &Lr, listEmail Le, listTag Lt); // 9. create relation between parent and child
+void deleteRelation(listRelasi &Lr, listEmail Le, listTag Lt, adrRelasi &P); // 10. delete relation between parent and child
+void showEmailWithMostTag(listRelasi Lr, listEmail Le); // 11a.show email with the most tags and how many tags it has
+void deleteEmailsWithTag(listRelasi &Lr, listEmail &Le, listTag Lt, string tag); // 11b. show email with the most tags and how many tags it has
 void showAllRelation(listRelasi Lr);
-void showRelationOfEmail(listRelasi Lr, listEmail Le, int emailID);
-
+//void showEmailsOfTag(listRelasi Lr, listTag Lt, string tag); // 11a. show emails of tag X
+//void countEmailsOfSender(listEmail Le, string email); // 11b. count emails from sender X
 
 #endif // LIST_RELASI_H_INCLUDED

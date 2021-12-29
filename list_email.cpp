@@ -48,7 +48,7 @@ void inputAndAllocate(adrEmail &P) {
 
     cout << "Isi      : " << endl << "-> ";
     getline(cin, isi);
-    cout << "------------------------------" << endl;
+    cout << "------------------------------" << endl << endl;
 
     // alokasi alamat data email
     P = allocateEmail(pengirim, penerima, subjek, isi);
@@ -131,23 +131,29 @@ void deleteLast(listEmail &L, adrEmail &P) // 2. delete parent
         }
         last(L) = Q;
         next(Q) = NULL;
-        next(P) = NULL;
     }
 }
+
+void deleteAfter(listEmail &L, adrEmail prec, adrEmail &P) {
+    P = next(prec);
+    next(prec) = next(P);
+    next(P) = NULL;
+}
+
 void showEmail(listEmail L)  // 3. show parent
 {
     adrEmail P = first(L);
-    cout << "----------All Emails----------:" << endl;
+    cout << "----------All Emails-----------" << endl;
 
     while (P != NULL) {
         cout << "ID: " <<info(P).emailID << endl;
         cout << "Pengirim Email : " << info(P).pengirim << endl;
         cout << "Penerima Email : " << info(P).penerima << endl;
         cout << "Subjek Email   : " << info(P).subjek << endl;
-        cout << "Isi Email      : " << endl << "-> " << info(P).isi << endl;
-        cout << "------------------------------" << endl;
+        cout << "Isi Email      : " << endl << "-> " << info(P).isi << endl << endl;
         P = next(P);
     }
+    cout << "-------------------------------" << endl << endl;
 }
 
 adrEmail findEmail(listEmail L, int emailID) // 4. find parent

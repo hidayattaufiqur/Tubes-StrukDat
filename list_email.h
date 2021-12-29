@@ -37,6 +37,7 @@ void insertLast(listEmail &L, adrEmail P); // 1. insert parent
 void deleteEmailByID(listEmail &L, int emailID, adrEmail &P);
 void deleteFirst(listEmail &L, adrEmail &P); // 2. delete parent
 void deleteLast(listEmail &L, adrEmail &P); // 2. delete parent
+void deleteAfter(listEmail &L, adrEmail prec, adrEmail &P);
 void showEmail(listEmail L); // 3. show parent
 adrEmail findEmail(listEmail L, int emailID); // 4. find parent
 

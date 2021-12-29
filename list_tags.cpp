@@ -16,10 +16,10 @@ void inputAndAllocate(adrTag &P) {
     string tag;
 
     // input tag
-    cout << "---------Input Tag---------:" << endl;
+    cout << "-----------Input Tag-----------" << endl;
     cout << "Nama Tag : ";
     cin >> tag;
-    cout << "------------------------------" << endl;
+    cout << "-------------------------------" << endl << endl;
 
     // alokasi alamat data tag
     P = allocateTag(tag);
@@ -36,7 +36,7 @@ void insertLast(listTag &L, adrTag P) {
         next(next(Q)) = NULL;
     }
     else {
-        while (Q != NULL) {
+        while (next(Q) != NULL) {
             Q = next(Q);
         }
         next(Q) = P;
@@ -93,13 +93,13 @@ void deleteLast(listTag &L, adrTag &P) {
 
 void showTag(listTag L) {
     adrTag P = first(L);
-    cout << "----------All Tags-----------" << endl;
+    cout << "-----------All Tags------------" << endl;
 
     while (P != NULL) {
         cout << "Tag : " << info(P) << endl;
         P = next(P);
     }
-    cout << "------------------------------" << endl;
+    cout << "-------------------------------" << endl << endl;
 }
 
 adrTag findTag(listTag L, string tag) {
