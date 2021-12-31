@@ -38,22 +38,16 @@ int main()
 
     adrEmail E;
 
-    E = allocateEmail("ondo", "dyat", "apadi ", "apakabs");
-    insertLast(Le, E);
-
-    E = allocateEmail("slkdnf", "sdnflksdaf", "apadi ", "apakabs");
-    insertLast(Le, E);
-
-    E = allocateEmail("dayt", "ondo", "askdasdl", "oandkasj");
-    insertLast(Le, E);
-
-    E = allocateEmail("aafdf", "asdfsadfsda", "askdasdl", "oandkasj");
-    insertLast(Le, E);
-
     listTag Lt;
     createList(Lt);
 
     adrTag T;
+
+    listRelasi Lr;
+    createList(Lr);
+
+    adrRelasi R;
+
 //    inputAndAllocate(T);
 //    insertLast(Lt, T);
 
@@ -65,11 +59,21 @@ int main()
 
 //    T = allocateTag("trash");
 //    insertLast(Lt, T);
+    E = allocateEmail("ondo", "dyat", "apadi ", "apakabs");
+    insertLast(Le, E);
+    insertTagOfEmail(Lr, E, T);
 
-    listRelasi Lr;
-    createList(Lr);
+    E = allocateEmail("slkdnf", "sdnflksdaf", "apadi ", "apakabs");
+    insertLast(Le, E);
+    insertTagOfEmail(Lr, E, T);
 
-    adrRelasi R;
+    E = allocateEmail("dayt", "ondo", "askdasdl", "oandkasj");
+    insertLast(Le, E);
+    insertTagOfEmail(Lr, E, T);
+
+    E = allocateEmail("aafdf", "asdfsadfsda", "askdasdl", "oandkasj");
+    insertLast(Le, E);
+    // insertTagOfEmail(Lr, E, T);
 //    addRelation(Lr, Le, Lt);
 //
 //    addRelation(Lr, Le, Lt);
@@ -158,10 +162,10 @@ int main()
             cout << "Delete all email with tag: ";
             cin >> tag;
             deleteEmailsWithTag(Lr, Le, Lt, tag);
-            cout << first(Lr);
+//            cout << first(Lr);
             break;
         }
-         cout << "Kembali ke menu utama? (Y/N) : ";
+         cout << "Return to main menu? (Y/N) : ";
             cin >> option;
             cout << endl;
             if (option == 'Y' || option == 'y') {
@@ -172,7 +176,7 @@ int main()
     }
 
 
-    cout << "ANDA TELAH KELUAR DARI PROGRAM" << endl;
+    cout << "PROGRAM EXITED." << endl;
     return 0;
 }
 

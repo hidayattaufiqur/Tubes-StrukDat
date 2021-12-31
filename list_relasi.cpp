@@ -43,7 +43,7 @@ void deleteFirst(listRelasi &L, adrRelasi &P) {
         first(L) = next(P);
         email(P) = NULL;
         tag(P) = NULL;
-        next(P) = NULL;
+        // next(P) = NULL;
     }
 }
 
@@ -61,8 +61,16 @@ void deleteLast(listRelasi &L, adrRelasi &P) {
         }
         email(next(P)) = NULL;
         tag(next(P)) = NULL;
-        next(P) = NULL;
+        // next(P) = NULL;
     }
+}
+
+void deleteAfter(listRelasi &L, adrRelasi prec, adrRelasi &P) {
+    P = next(prec);
+    next(prec) = next(P);
+    email(P) = NULL; // logic error?
+    tag(P) = NULL; // logic error?
+    // next(P) = NULL;
 }
 
 void insertTagOfEmail(listRelasi &Lr, adrEmail email, adrTag tag) // 5. insert child of parent X
@@ -75,34 +83,42 @@ void insertTagOfEmail(listRelasi &Lr, adrEmail email, adrTag tag) // 5. insert c
 
 void deleteTagOfEmail(listRelasi &Lr, adrEmail email, adrTag tag, adrRelasi &P) // 6. delete child of parent X
 {
-    adrRelasi Q = first(Lr);
-    if (Q != NULL) {
-        if (next(Q) == NULL) {
-            if (email(Q) == email && tag(Q) == tag) {
-                deleteFirst(Lr, Q);
+    adrRelasi R = first(Lr);
+    if (R != NULL) {
+        if (next(R) == NULL) { // isi list relasi ada 1
+            if (email(R) == email && tag(R) == tag) {
+                deleteFirst(Lr, P);
             } else {
                 cout << "Email dengan tag 1'" << info(tag) << "' tidak ditemukan." << endl;
             }
-        } else if (next(next(Q)) == NULL) {
-            if (email(Q) == email && tag(Q) == tag) {
-                deleteFirst(Lr, Q);
-            } else if (email(next(Q)) == email && tag(next(Q)) == tag) {
-                deleteLast(Lr, Q);
+        } else if (next(next(R)) == NULL) { // isi list relasi ada 2
+            if (email(R) == email && tag(R) == tag) {
+                deleteFirst(Lr, P);
+            } else if (email(next(R)) == email && tag(next(R)) == tag) {
+                deleteLast(Lr, P);
             } else {
                 cout << "Email dengan tag 2'" << info(tag) << "' tidak ditemukan." << endl;
             }
-        } else {
-            while(next(Q) != NULL && email(next(Q)) != email && tag(next(Q)) != tag) {
-                Q = next(Q);
-            }
-            if (email(next(Q)) == email && tag(next(Q)) == tag) {
-                next(Q) = next(next(Q));
-                email(next(Q)) = NULL; // logic error?
-                tag(next(Q)) = NULL; // logic error?
-                next(next(Q)) = NULL;
-                P = next(Q);
+        } else { // isi list relasi > 2
+            // if (R == first(Lr)) {
+            if (email(R) == email && tag(R) == tag) {
+                deleteFirst(Lr, P);
+                // }
             } else {
-                cout << "Email dengan tag 3'" << info(tag) << "' tidak ditemukan." << endl;
+                while(next(next(R)) != NULL && email(next(R)) != email && tag(next(R)) != tag) {
+                    R = next(R);
+                }
+
+                if (email(next(R)) == email && tag(next(R)) == tag) {
+                    deleteAfter(Lr, R, P);
+                    // next(R) = next(next(R));
+                    // email(next(R)) = NULL; // logic error?
+                    // tag(next(R)) = NULL; // logic error?
+                    // next(next(R)) = NULL;
+                    // P = next(R);
+                 } else {
+                    cout << "Email dengan tag 3'" << info(tag) << "' tidak ditemukan." << endl;
+                }
             }
         }
     } else {
@@ -232,31 +248,27 @@ void showEmailWithMostTag(listRelasi Lr, listEmail Le) // 11a.show email with th
 void deleteEmailsWithTag(listRelasi &Lr, listEmail &Le, listTag Lt, string tag) // 11b. show email with the most tags and how many tags it has
 {
     adrTag T = findTag(Lt, tag);
-    adrRelasi Q, R = first(Lr);
-    adrEmail P, E = first(Le);
+    adrRelasi temp_R, R = first(Lr);
+    adrEmail temp_E, E = first(Le);
 
     if (R == NULL) {
-        cout << "List email kosong." << endl;
+        cout << "List Relasi kosong." << endl;
     } else {
-//        showAllRelation(Lr);
         while (R != NULL) {
             if (tag(R) == T) {
-                deleteTagOfEmail(Lr, email(R), T, Q);
 
                 if (email(R) == first(Le)) {
-                    deleteFirst(Le, P);
+                    deleteFirst(Le, temp_E);
                 } else if (email(R) == last(Le)) {
-                    deleteLast(Le, P);
+                    deleteLast(Le, temp_E);
                 } else {
                     E = first(Le);
-                    while (next(E) != NULL) {
-                        if (next(E) == email(R)) {
-                            cout << "hi?" << endl;
-                            deleteAfter(Le, E, P);
-                        }
+                    while (next((E)) != email(R) && next(next(E)) != NULL) {
                         E = next(E);
                     }
+                    deleteAfter(Le, E, temp_E);
                 }
+                deleteTagOfEmail(Lr, email(R), T, temp_R);
             }
             R = next(R);
         }

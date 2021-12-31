@@ -28,6 +28,7 @@ adrRelasi allocateRelation(adrEmail email, adrTag tag);
 void insertLast(listRelasi &L, adrRelasi P);
 void deleteFirst(listRelasi &L, adrRelasi &P);
 void deleteLast(listRelasi &L, adrRelasi &P);
+void deleteAfter(listRelasi &L, adrRelasi prec, adrRelasi &P);
 void insertTagOfEmail(listRelasi &Lr, adrEmail email, adrTag tag); // 5. insert child of parent X
 void deleteTagOfEmail(listRelasi &Lr, adrEmail email, adrTag tag, adrRelasi &P); // 6. delete child of parent X
 void showTagOfEmail(listRelasi Lr, listEmail Le, int emailID); // 7. show child of parent X
