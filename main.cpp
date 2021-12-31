@@ -17,7 +17,7 @@ int selectMenu(){
     cout << "11. Show email with most tag" << endl;
     cout << "12. Delete all email with tag" << endl;
     cout << "0. Selesai " << endl;
-    cout << "Masukkan menu: ";
+    cout << "Input menu: ";
 
     int input = 0;
     cin >> input;
