@@ -5,4 +5,4 @@
 2. Imam Rifai Kadir Sibali - 1301204269
 
 ## Ilustrasi MLL (N-M)
-![Ilustrasi MLL](https://github.com/hidayattaufiqur/Tubes-StrukDat/blob/main/TubesSTD.jpg)
+![Ilustrasi MLL](https://github.com/hidayattaufiqur/Tubes-StrukDat/blob/main/TubesSTD.png)
