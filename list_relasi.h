@@ -41,7 +41,5 @@ void deleteRelation(listRelasi &Lr, listEmail Le, listTag Lt, adrRelasi &P); // 
 void showEmailWithMostTag(listRelasi Lr, listEmail Le); // 11a.show email with the most tags and how many tags it has
 void deleteEmailsWithTag(listRelasi &Lr, listEmail &Le, listTag Lt, string tag); // 11b. show email with the most tags and how many tags it has
 void showAllRelation(listRelasi Lr);
-//void showEmailsOfTag(listRelasi Lr, listTag Lt, string tag); // 11a. show emails of tag X
-//void countEmailsOfSender(listEmail Le, string email); // 11b. count emails from sender X
 
 #endif // LIST_RELASI_H_INCLUDED

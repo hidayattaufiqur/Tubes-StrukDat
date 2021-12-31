@@ -15,13 +15,11 @@ adrTag allocateTag(infotype tag) {
 void inputAndAllocate(adrTag &P) {
     string tag;
 
-    // input tag
     cout << "-----------Input Tag-----------" << endl;
     cout << "Nama Tag : ";
     cin >> tag;
     cout << "-------------------------------" << endl << endl;
 
-    // alokasi alamat data tag
     P = allocateTag(tag);
 }
 

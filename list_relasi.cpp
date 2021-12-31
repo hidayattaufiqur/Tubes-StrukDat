@@ -111,11 +111,6 @@ void deleteTagOfEmail(listRelasi &Lr, adrEmail email, adrTag tag, adrRelasi &P) 
 
                 if (email(next(R)) == email && tag(next(R)) == tag) {
                     deleteAfter(Lr, R, P);
-                    // next(R) = next(next(R));
-                    // email(next(R)) = NULL; // logic error?
-                    // tag(next(R)) = NULL; // logic error?
-                    // next(next(R)) = NULL;
-                    // P = next(R);
                  } else {
                     cout << "Email dengan tag 3'" << info(tag) << "' tidak ditemukan." << endl;
                 }
@@ -149,17 +144,6 @@ void showTagOfEmail(listRelasi Lr, listEmail Le, int emailID) // 7. show child o
         cout << "\n-------------------------------" << endl << endl;
     }
 };
-
-//void findTagOfEmail(listRelasi Lr, listEmail Le, listTag Lt, int emailID); // 8. find child of parent X
-//{
-//    adrEmail E = findEmail(Le);
-//    adrTag T = findTag(Lt);
-//
-//    adrRelasi R = first(Lr);
-//    if (R != NULL) {
-//        while )
-//    }
-//}
 
 void addRelation(listRelasi &Lr, listEmail Le, listTag Lt) {
     int ID;
