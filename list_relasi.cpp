@@ -68,8 +68,8 @@ void deleteLast(listRelasi &L, adrRelasi &P) {
 void deleteAfter(listRelasi &L, adrRelasi prec, adrRelasi &P) {
     P = next(prec);
     next(prec) = next(P);
-    email(P) = NULL; // logic error?
-    tag(P) = NULL; // logic error?
+    email(P) = NULL; 
+    tag(P) = NULL; 
     // next(P) = NULL;
 }
 
