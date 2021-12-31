@@ -89,7 +89,7 @@ void deleteTagOfEmail(listRelasi &Lr, adrEmail email, adrTag tag, adrRelasi &P) 
             if (email(R) == email && tag(R) == tag) {
                 deleteFirst(Lr, P);
             } else {
-                cout << "Email dengan tag 1'" << info(tag) << "' tidak ditemukan." << endl;
+                cout << "Email dengan tag '" << info(tag) << "' tidak ditemukan." << endl;
             }
         } else if (next(next(R)) == NULL) { // isi list relasi ada 2
             if (email(R) == email && tag(R) == tag) {
@@ -97,7 +97,7 @@ void deleteTagOfEmail(listRelasi &Lr, adrEmail email, adrTag tag, adrRelasi &P) 
             } else if (email(next(R)) == email && tag(next(R)) == tag) {
                 deleteLast(Lr, P);
             } else {
-                cout << "Email dengan tag 2'" << info(tag) << "' tidak ditemukan." << endl;
+                cout << "Email dengan tag '" << info(tag) << "' tidak ditemukan." << endl;
             }
         } else { // isi list relasi > 2
             // if (R == first(Lr)) {
@@ -112,7 +112,7 @@ void deleteTagOfEmail(listRelasi &Lr, adrEmail email, adrTag tag, adrRelasi &P) 
                 if (email(next(R)) == email && tag(next(R)) == tag) {
                     deleteAfter(Lr, R, P);
                  } else {
-                    cout << "Email dengan tag 3'" << info(tag) << "' tidak ditemukan." << endl;
+                    cout << "Email dengan tag '" << info(tag) << "' tidak ditemukan." << endl;
                 }
             }
         }
